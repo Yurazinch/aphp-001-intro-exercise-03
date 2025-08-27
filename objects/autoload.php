@@ -1,8 +1,8 @@
 <?php
 
-function autoload(string $namespace, string $classname) {
+function autoload(string $namespace) {
 
-    $path = "{$namespace}\{$classname}.php";
+    $path = "{$namespace}.php";
     
     require_once($path);
 }
