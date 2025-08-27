@@ -17,44 +17,50 @@ class Student
         $this->is_student = $is_student;
     }
 
-    static $COURSE = 5;
+    private static int $COURSE = 5;
     
-    private function setStydent() {
-        if( $this->course > $COURSE ) { 
+    private function setStudent() {        
         $this->is_student = false;
-        $this->finished();        
-        }
+        $this->finished();
     }
 
-    private function incrementAge(): void {
+    public function incrementAge(): void {
         $this->age += 1;
         $this->ageChanged();
     }
 
-    private function incrementCourse(): void {
+    public function incrementCourse(): void {
         $this->course += 1;
-        $this->courseChanged();
+        if( $this->course > Student::$COURSE ) {
+            $this->setStudent();
+        } else {
+            $this->courseChanged();
+        }        
     }
 
-    private function changeFaculty(int $newFaculty): void {
-        $this->faculty = $newFaculty;
-        $this->facultyChanged();
+    public function changeFaculty(string $newFaculty): void {
+        if($this->is_student) {
+            $this->faculty = $newFaculty;
+            $this->facultyChanged();
+        } else {
+            echo 'Студент закончил обучение'."\n";
+        }
     }
 
-    private function ageChanged(): void {
-        echo "Возраст изменен на $this->age";
+    public function ageChanged(): void {
+        echo "Возраст изменен на $this->age"."\n";
     }
 
-    private function courseChanged(): void {
-        echo "Перевод на $this->course курс";
+    public function courseChanged(): void {
+        echo "Перевод на $this->course курс"."\n";
     }
 
-    private function facultyChanged(): void {
-        echo "Перевод на факультет $this->faculty";        
+    public function facultyChanged(): void {        
+        echo "Перевод на факультет $this->faculty"."\n"; 
     }
 
-    private function finished(): void {
-        echo "Обучение закончено";
+    public function finished(): void {
+        echo "Обучение завершено"."\n";
     }
 
 }

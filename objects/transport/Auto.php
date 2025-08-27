@@ -17,25 +17,30 @@ class Auto
         $this->engine_capacity = $engine_capacity;
         $this->fuel_tank = $fuel_tank;
         $this->year_issue = $year_issue;
-        $this->mileage = null;
+        $this->mileage = 0;
         $this->price = $price;        
     }
 
-    static $MILEAGE = 0.5;
+    private static int $MILEAGE = 5;
 
-    public function setMileage(int $mileage): void {
-        $this->mileage = $mileage;
+    public function setMileage(int $new_mileage): void {
+        $this->mileage = $new_mileage;
+        $this->setStatus();
     }    
 
-    private function setStatus() {
-        if($this->mileage <= $MILEAGE) {
+    private function setStatus(): void {
+        if($this->mileage <= Auto::$MILEAGE) {
             $this->is_new = true;
         } else {
             $this->is_new = false;
         }
     }
 
-    public function getStatus() {
-        return $is_new;
+    public function getStatus(): string {
+        if($this->is_new) {
+            return 'Новая';
+        } else {
+            return 'С пробегом';
+        }
     }
 }
