@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-//namespace transport\Auto;
+namespace Transport;
 
 class Auto 
 {

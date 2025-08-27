@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-//namespace human\Student;
+namespace Human;
 
 class Student 
 {
