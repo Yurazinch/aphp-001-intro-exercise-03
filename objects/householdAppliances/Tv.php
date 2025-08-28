@@ -24,10 +24,10 @@ class Tv
         $this->price = $price;
     }
 
-    static private string $SCREEN_RESOLUTION = '2560x1440';
+    const SCREEN_RESOLUTION = '2560x1440';
 
     private function setQhd(): void {
-        if($this->screen_resolution < Tv::$SCREEN_RESOLUTION) {
+        if($this->screen_resolution < Tv::SCREEN_RESOLUTION) {
             $this->is_qhd = false;
         } else {
             $this->is_qhd = true;

@@ -21,7 +21,7 @@ class Auto
         $this->price = $price;        
     }
 
-    private static int $MILEAGE = 5;
+    const MILEAGE = 5;
 
     public function setMileage(int $new_mileage): void {
         $this->mileage = $new_mileage;
@@ -29,7 +29,7 @@ class Auto
     }    
 
     private function setStatus(): void {
-        if($this->mileage <= Auto::$MILEAGE) {
+        if($this->mileage <= Auto::MILEAGE) {
             $this->is_new = true;
         } else {
             $this->is_new = false;

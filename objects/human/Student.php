@@ -17,7 +17,7 @@ class Student
         $this->is_student = $is_student;
     }
 
-    private static int $COURSE = 5;
+    const COURSE = 5;
     
     private function setStudent() {        
         $this->is_student = false;
@@ -31,7 +31,7 @@ class Student
 
     public function incrementCourse(): void {
         $this->course += 1;
-        if( $this->course > Student::$COURSE ) {
+        if( $this->course > Student::COURSE ) {
             $this->setStudent();
         } else {
             $this->courseChanged();
