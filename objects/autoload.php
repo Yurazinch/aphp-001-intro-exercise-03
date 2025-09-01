@@ -2,7 +2,7 @@
 
 function autoload(string $namespace) {
 
-    $path = "{$namespace}.php";
+    $path = str_replace('\\', '/', $namespace) . '.php';
     
     require_once($path);
 }

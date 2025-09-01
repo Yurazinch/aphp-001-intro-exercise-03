@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace HouseholdAppliances;
 
-class Tv 
+class Televisor 
 {
 
     public $brand, $model, $screen_diagonal, $screen_resolution, $backlight_type, $garanty, $frame_rate, $width, $height, $price;
 
-    private bool $is_qhd;
+    protected bool $is_qhd;
 
     public function __construct(string $brand, string $model, int $screen_diagonal, string $screen_resolution, string $backlight_type, bool $garanty, int $frame_rate, int $width, int $height, int $price) {
         $this->brand = $brand;
@@ -27,7 +27,7 @@ class Tv
     const SCREEN_RESOLUTION = '2560x1440';
 
     private function setQhd(): void {
-        if($this->screen_resolution < Tv::SCREEN_RESOLUTION) {
+        if($this->screen_resolution < Televisor::SCREEN_RESOLUTION) {
             $this->is_qhd = false;
         } else {
             $this->is_qhd = true;
