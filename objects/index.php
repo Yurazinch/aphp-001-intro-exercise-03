@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Human\Student;
-use Transport\Auto;
-use HouseholdAppliances\Televisor;
+use human\Student;
+use transport\Auto;
+use householdAppliances\Televisor;
 
 //require_once('Human\Student.php');
 //require_once('Transport\Auto.php');
